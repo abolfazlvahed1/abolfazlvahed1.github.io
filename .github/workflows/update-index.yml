@@ -1,0 +1,42 @@
+name: Update index.html
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - schedule_output.html
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout AmozeshyarTimetable repo
+        uses: actions/checkout@v2
+        with:
+          repository: abolfazlvahed1/AmozeshyarTimetable
+          path: timetable
+          token: ${{ secrets.ACTIONS_TOKEN }}
+
+      - name: Checkout github.io repo
+        uses: actions/checkout@v2
+        with:
+          repository: abolfazlvahed1/abolfazlvahed1.github.io
+          path: github-io
+          token: ${{ secrets.ACTIONS_TOKEN }}
+
+      - name: Copy schedule_output.html to index.html
+        run: cp timetable/schedule_output.html github-io/index.html
+
+      - name: Commit and push changes
+        run: |
+          cd github-io
+          git config --local user.email "you@example.com"
+          git config --local user.name "Your Name"
+          git add index.html
+          git commit -m "Update index.html from schedule_output.html"
+          git push
+
+      
+
+     
