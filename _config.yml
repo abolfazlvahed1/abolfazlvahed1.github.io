@@ -98,11 +98,11 @@ theme_mode: dark # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: {{ '/commons/social.jpg' | relative_url }} 
+avatar: https://github.com/abolfazlvahed1/abolfazlvahed1.github.io/blob/main/common/social.jpg
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: {{ '/commons/social.jpg' | relative_url }} # string, local or CORS resources
+social_preview_image: https://github.com/abolfazlvahed1/abolfazlvahed1.github.io/blob/main/common/social.jpg # string, local or CORS resources
 
 # boolean type, the global switch for TOC in posts.
 toc: true
