@@ -151,6 +151,10 @@ paginate: 10
 # The base URL of your site
 baseurl: ""
 
+url: "https://abolfazlvahed1.github.io" # the base hostname & protocol for your site
+plugins:
+  - jekyll-sitemap
+
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
